@@ -49,13 +49,18 @@ def writeQuote(category, quote, author, dbcursor):
     dbcursor.execute('''insert or ignore into quotes (category, quote, author)
                         values (?, ?, ?)''', (category, quote, author))
 
+def getUrl(url):
+    fname = input('Enter Sources of Insight Quote Url: ')
+    if (len(fname) < 1) : fname = url
+    return fname
+
 print('Starting')
 dbConnection = sqlite3.connect('quotes.sqlite')
 dbCursor = dbConnection.cursor()
 initializeQuotesDb(dbCursor)
 
 
-url = 'http://sourcesofinsight.com/inspirational-quotes/'
+url = getUrl('http://sourcesofinsight.com/inspirational-quotes/')
 page = getPage(url)
 
 for section in page.find_all('h2'):

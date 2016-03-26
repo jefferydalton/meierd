@@ -1,8 +1,0 @@
-C:\dev\meierd\meierd\src\fs\quoteExtract\bin\Debug\quoteExtract.exe.config
-C:\dev\meierd\meierd\src\fs\quoteExtract\bin\Debug\quoteExtract.XML
-C:\dev\meierd\meierd\src\fs\quoteExtract\bin\Debug\quoteExtract.exe
-C:\dev\meierd\meierd\src\fs\quoteExtract\bin\Debug\quoteExtract.pdb
-C:\dev\meierd\meierd\src\fs\quoteExtract\bin\Debug\FSharp.Core.dll
-C:\dev\meierd\meierd\src\fs\quoteExtract\bin\Debug\FSharp.Core.xml
-C:\dev\meierd\meierd\src\fs\quoteExtract\obj\Debug\quoteExtract.exe
-C:\dev\meierd\meierd\src\fs\quoteExtract\obj\Debug\quoteExtract.pdb

@@ -12,3 +12,9 @@ let ``Basic Test``() =
 let ``parseQuotes should return 1 quote``() =
     let resultQuotes = parseQuotes.getQuotes("foo")
     Assert.AreEqual(resultQuotes.Length, 1)
+
+[<Test>]
+let ``parseQuotes should return 1 quote with Author Adam Ant``() =
+    let resultQuotes = parseQuotes.getQuotes("foo")
+    Assert.AreEqual(resultQuotes.Length, 1)
+    Assert.AreEqual(resultQuotes.Head.Author, "Adam Ant")

@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Extract", "Extract.fsproj", "{4E33AE92-C51D-4D51-B3EB-AE83CCE90432}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests", "..\Tests\Tests.fsproj", "{4A658F2A-1D43-4B26-B825-090DE3F5DED2}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests", "Tests\Tests.fsproj", "{4A658F2A-1D43-4B26-B825-090DE3F5DED2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

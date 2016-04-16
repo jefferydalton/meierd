@@ -55,6 +55,7 @@
     <Compile Include="ExtractTests.fs" />
     <Content Include="packages.config" />
     <Content Include="App.config" />
+    <Compile Include="LoadTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data">
@@ -75,6 +76,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\LoadQuotes\Load.fsproj">
+      <Name>Load</Name>
+      <Project>{5d11c970-259b-4a10-8afd-cf809f11cf54}</Project>
+      <Private>True</Private>
+    </ProjectReference>
     <ProjectReference Include="..\Extract.fsproj">
       <Name>Extract</Name>
       <Project>{4e33ae92-c51d-4d51-b3eb-ae83cce90432}</Project>

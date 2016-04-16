@@ -20,7 +20,7 @@ let (|Category|Quote|Author|Other|) (item:HtmlNode) =
             Category (item.InnerText())
     elif quote.Success then
         Quote (quote.Groups.Item(1).Value)
-    elif name.Success & item.HasAttribute("align", "right") then
+    elif name.Success && item.HasAttribute("align", "right") then
         Author (name.Groups.Item(1).Value)    
 //    elif quoteAndName.Success then
 //        QuoteAndAuthor (quoteAndName.Groups.Item(0).Value, quoteAndName.Groups.Item(1).Value)

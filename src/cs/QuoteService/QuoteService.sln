@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5AE4D88B-E733-4C16-ADD6-A6E01C62D57D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1784BE8F-3A9A-4161-BDA4-B22B8B8A586A}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "QuoteService", "src\QuoteService\QuoteService.xproj", "{500C428B-B824-4B43-875B-020B6CC6ACD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{500C428B-B824-4B43-875B-020B6CC6ACD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{500C428B-B824-4B43-875B-020B6CC6ACD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{500C428B-B824-4B43-875B-020B6CC6ACD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{500C428B-B824-4B43-875B-020B6CC6ACD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{500C428B-B824-4B43-875B-020B6CC6ACD6} = {5AE4D88B-E733-4C16-ADD6-A6E01C62D57D}
+	EndGlobalSection
+EndGlobal

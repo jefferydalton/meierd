@@ -3,14 +3,17 @@
 
 open NUnit.Framework
 open MeiredQuotes.Extract.FS.QuoteExtract
-
+open System.Linq
 
 [<Test>]
-let ``Extract should return empty list of type quote``() =
+let ``Extract should return non empty list of type quote``() =
     let result = Extract.PullQuotes(@"http://sourcesofinsight.com/inspirational-quotes/")
-    Assert.AreEqual(result.Length, 0)
+    Assert.AreNotEqual(result.Length, 0)
 
-
+[<Test>]
+let ``Extract should return non empty list of type quote from Achievement category``() =
+    let result = Extract.PullQuotes(@"http://sourcesofinsight.com/inspirational-quotes/")
+    Assert.AreNotEqual(result.Where(fun (x) -> x.Category = "Achievement").Count(), 0);
 
 [<Test>]
 let ``Extract should throw exception with null input``() =

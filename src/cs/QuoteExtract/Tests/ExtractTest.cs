@@ -1,8 +1,9 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Linq;
+using MeiredQuotes.Extract.CS.QuoteExtract;
 
-namespace Tests
+namespace MeiredQuotes.Extract.CS.Tests
 {
     [TestFixture]
     public class ExtractTest

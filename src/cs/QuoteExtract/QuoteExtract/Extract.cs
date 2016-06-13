@@ -7,7 +7,7 @@ using EnsureThat;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 
-namespace QuoteExtract
+namespace MeiredQuotes.Extract.CS.QuoteExtract
 {
     public static class Extract
     {

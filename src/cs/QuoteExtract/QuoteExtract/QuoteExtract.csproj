@@ -7,8 +7,8 @@
     <ProjectGuid>{25555225-F0B2-40A7-A62B-6EA1E1797D81}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QuoteExtract</RootNamespace>
-    <AssemblyName>QuoteExtract</AssemblyName>
+    <RootNamespace>MeiredQuotes.Extract.CS.QuoteExtract</RootNamespace>
+    <AssemblyName>MeiredQuotes.Extract.CS.QuoteExtract</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

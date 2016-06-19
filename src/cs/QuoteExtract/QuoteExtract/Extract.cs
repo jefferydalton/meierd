@@ -18,7 +18,7 @@ namespace MeiredQuotes.Extract.CS.QuoteExtract
                         
             return MapQuotes(new HtmlWeb().Load(siteUrl)?.DocumentNode.SelectSingleNode("//h2"));
         }
-
+        
         private static List<Quote> MapQuotes(HtmlNode node)
         {
             var jdMeirerQuoteRx = new Regex(@"(“.+”)\s(—|–)\s(.+)");

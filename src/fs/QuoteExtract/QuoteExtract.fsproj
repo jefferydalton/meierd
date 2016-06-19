@@ -58,7 +58,6 @@
     <Compile Include="AssemblyInfo.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
-    <Compile Include="parseQuotes.fs" />
     <Compile Include="Extract.fs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteExtract", "QuoteExtrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{A94AD28E-C686-40FA-A4D8-30D1211ADADA}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Common", "..\Common\Common\Common.shproj", "{163D0AD6-E5AB-454F-AD60-6DF931954239}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\Common\Common\Common.projitems*{163d0ad6-e5ab-454f-ad60-6df931954239}*SharedItemsImports = 13
+		..\Common\Common\Common.projitems*{25555225-f0b2-40a7-a62b-6ea1e1797d81}*SharedItemsImports = 4
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU

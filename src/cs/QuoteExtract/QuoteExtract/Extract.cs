@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using EnsureThat;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
+using MeiredQuotes.Common.CS;
 
 namespace MeiredQuotes.Extract.CS.QuoteExtract
 {

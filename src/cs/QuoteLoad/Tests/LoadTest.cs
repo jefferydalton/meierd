@@ -10,23 +10,33 @@ namespace MeiredQuotes.Load.CS.Tests
     public class LoadTest
     {
         [Test]
-        public void PushNullQuotesList()
+        public void LoadNullQuotesList()
         {
-            Assert.Throws<ArgumentNullException>(() => QuoteLoad.Load.PushQuotes(null));         
+            Assert.Throws<ArgumentNullException>(() => QuoteLoad.Load.LoadQuotes(QuoteLoad.ConfigureTable.GetTestTableConfiguration(), null));         
         }
 
         [Test]
-        public void PushEmptyQuotesList()
+        public void LoadEmptyQuotesList()
         {
-            Assert.Throws<ArgumentException>(() => QuoteLoad.Load.PushQuotes(new List<Quote>()));
+            Assert.Throws<ArgumentException>(() => QuoteLoad.Load.LoadQuotes(QuoteLoad.ConfigureTable.GetTestTableConfiguration(), new List<Quote>()));
         }
 
         [Test]
-        public void PushSingleItemQuoteList()
+        public void LoadNullCloudTable()
         {
             var item = new List<Quote>() { new Quote { Author = "Test", Category = "Test", QuoteText = "Test" } };
-            var result = QuoteLoad.Load.PushQuotes(item);
-            Assert.IsNull(result);
+            Assert.Throws<ArgumentNullException>(() => QuoteLoad.Load.LoadQuotes(null, item));
+        }
+
+
+        [Test]
+        public void LoadSingleItemQuoteList()
+        {
+            var item = new List<Quote>() { new Quote { Author = "Test", Category = "Test", QuoteText = "Test" } };
+            var result = QuoteLoad.Load.LoadQuotes(QuoteLoad.ConfigureTable.GetTestTableConfiguration(), item);
+            Assert.IsNotNull(result, "result is not null");
+            Assert.IsTrue(result.IsOkay, "result.IsOkay is true");
+            Assert.IsTrue(result.LoadCount == 0, "result.LoadCount is 0");
         }
 
     }

@@ -5,17 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EnsureThat;
+using Microsoft.WindowsAzure.Storage.Table;
+using System.Diagnostics;
 
 namespace MeiredQuotes.Load.CS.QuoteLoad
 {
     public static class Load
     {
-        public static PushResult PushQuotes(List<Quote> quotes)
+        public static LoadResult LoadQuotes(CloudTable table, List<Quote> quotes)
         {
             Ensure.That(quotes).IsNotNull();
             Ensure.That(quotes).HasItems();
+            Ensure.That(table).IsNotNull();
 
-            return null;
+            var duration = new Stopwatch().Time(() => Console.Write("foo"));
+            return new LoadResult(duration, true, 0);
         }
     }
 }

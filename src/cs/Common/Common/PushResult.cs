@@ -4,10 +4,10 @@ using System.Text;
 
 namespace MeiredQuotes.Common.CS
 {
-    public class PushResult
+    public class LoadResult
     {
-        private  PushResult() { }
-        public PushResult(TimeSpan duration, bool result)
+        private  LoadResult() { }
+        public LoadResult(TimeSpan duration, bool result)
         {
             this.Duration = duration;
             this.IsOkay = result;

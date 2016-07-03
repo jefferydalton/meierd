@@ -12,5 +12,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)PushResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Quote.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StopwatchExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StringExtensions.cs" />
   </ItemGroup>
 </Project>

@@ -36,7 +36,7 @@ namespace MeiredQuotes.Load.CS.Tests
             var result = QuoteLoad.Load.LoadQuotes(QuoteLoad.ConfigureTable.GetTestTableConfiguration(), item);
             Assert.IsNotNull(result, "result is not null");
             Assert.IsTrue(result.IsOkay, "result.IsOkay is true");
-            Assert.IsTrue(result.LoadCount == 0, "result.LoadCount is 0");
+            Assert.IsTrue(result.LoadCount == 1, "result.LoadCount is 1");
         }
 
     }

@@ -15,7 +15,8 @@ namespace MeiredQuotes.Load.CS.Tests
         [TestFixtureSetUp]
         public void Initialize()
         {
-            tableConfiguration = QuoteLoad.ConfigureTable.GetTableConfiguration(QuoteLoad.ConfigureTable.GetTableName());
+            var randomName = "LoadTest" + Guid.NewGuid().ToString("N");
+            tableConfiguration = QuoteLoad.ConfigureTable.GetTableConfiguration(randomName);
         }
 
         [TestFixtureTearDown]

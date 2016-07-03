@@ -6,16 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeiredQuotes.Load.CS.QuoteLoad
+namespace MeiredQuotes.Load.CS.QuoteLoad.Entities
 {
     public class QuoteEntity : TableEntity
     {
-        public QuoteEntity(Quote quote)
+        public QuoteEntity(Quote quote, int id)
         {
-            this.PartitionKey = quote.Author;
-            this.RowKey = quote.QuoteText.ToSHA256();
+            this.PartitionKey = "1";
+            this.RowKey = id.ToString("D8");
 
             this.Category = quote.Category;
+            this.Author = quote.Author;
             this.QuoteText = quote.QuoteText;
 
         }
@@ -24,11 +25,12 @@ namespace MeiredQuotes.Load.CS.QuoteLoad
 
         public string Category { get; set; }
         public string QuoteText { get; set; }
+        public string Author { get; set; }
         
     
         public Quote ToQuote()
         {
-            return new Quote { Author = this.PartitionKey, Category = this.Category, QuoteText = this.QuoteText };
+            return new Quote { Author = this.Author, Category = this.Category, QuoteText = this.QuoteText };
         }
     }
 }

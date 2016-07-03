@@ -1,4 +1,5 @@
-﻿using Microsoft.WindowsAzure.Storage.Table;
+﻿using MeiredQuotes.Common.CS;
+using Microsoft.WindowsAzure.Storage.Table;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,13 @@ namespace MeiredQuotes.Load.CS.QuoteLoad.Entities
 {
     public class ControlEntity : TableEntity
     {
-        public ControlEntity(string authorHash, string quoteTextHash)
+        public ControlEntity(Quote quote, int id)
         {
-            this.PartitionKey = authorHash;
-            this.RowKey = quoteTextHash;
+            this.PartitionKey = quote.Author.ToSHA256();
+            this.RowKey = quote.QuoteText.ToSHA256();
+            this.Id = id.ToString("D8");
         }
+
+        public string Id { get; set; }
     }
 }

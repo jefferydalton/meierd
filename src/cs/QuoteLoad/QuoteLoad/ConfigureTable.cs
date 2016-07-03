@@ -11,17 +11,13 @@ namespace MeiredQuotes.Load.CS.QuoteLoad
 {
     public class ConfigureTable
     {
-        public static CloudTable GetDefaultTableConfiguration()
+
+        public static string GetTableName()
         {
-            return GetTableConfiguration("quotes");
+            return System.Configuration.ConfigurationManager.AppSettings["table"];
         }
 
-        public static CloudTable GetTestTableConfiguration()
-        {
-            return GetTableConfiguration("quotesTest");
-        }
-
-        private static CloudTable GetTableConfiguration(string tableName)
+        public static CloudTable GetTableConfiguration(string tableName)
         {
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
                 CloudConfigurationManager.GetSetting("StorageConnectionString"));

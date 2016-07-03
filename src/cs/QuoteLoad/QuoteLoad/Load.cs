@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using EnsureThat;
 using Microsoft.WindowsAzure.Storage.Table;
 using System.Diagnostics;
+using MeiredQuotes.Load.CS.QuoteLoad.Entities;
 
 namespace MeiredQuotes.Load.CS.QuoteLoad
 {
@@ -26,16 +27,27 @@ namespace MeiredQuotes.Load.CS.QuoteLoad
                 {
                     if (!DoesQuoteExist(table, quote))
                     {
-                        var id = GetNextId(table);
-                        var tableQuote = new QuoteEntity(quote);
-                        var operation = TableOperation.InsertOrReplace(tableQuote);
-                        var result = table.Execute(operation);
+                        InsertQuote(table, quote);
                         recordsLoaded += 1;
                     }
                 };
             }
             );
             return new LoadResult(duration, true, recordsLoaded);
+        }
+
+        private static TableResult InsertQuote(CloudTable table, Quote quote)
+        {
+            var id = GetNextId(table);
+
+            var quoteEntity = new QuoteEntity(quote, id);
+            var quoteOperation = TableOperation.InsertOrReplace(quoteEntity);
+            var result = table.Execute(quoteOperation);
+
+            var controlEntity = new ControlEntity(quote, id);
+            var controlOperation = TableOperation.InsertOrReplace(controlEntity);
+            return table.Execute(controlOperation);
+
         }
 
         private static int GetNextId(CloudTable table)
@@ -57,7 +69,7 @@ namespace MeiredQuotes.Load.CS.QuoteLoad
             return idEntity.Id;
         }
 
-        public static bool DoesQuoteExist(CloudTable table, Quote quote)
+        private static bool DoesQuoteExist(CloudTable table, Quote quote)
         {
             var result = table.Execute(TableOperation.Retrieve(quote.Author.ToSHA256(),
                                                                quote.QuoteText.ToSHA256()));

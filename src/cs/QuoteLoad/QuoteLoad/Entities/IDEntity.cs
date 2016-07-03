@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeiredQuotes.Load.CS.QuoteLoad
+namespace MeiredQuotes.Load.CS.QuoteLoad.Entities
 {
     public class IDEntity : TableEntity
     {
